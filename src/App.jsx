@@ -6,14 +6,21 @@ import Quiz from "./pages/Quiz";
 import Result from "./pages/Result";
 import ComingSoon from "./widgets/ComingSoon";
 import NotFound from "./widgets/NotFound";
+import { useEffect } from "react";
+import Contact from "./pages/Contact";
 
 function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [window.location.pathname]);
+
   return (
     <div>
       <Toaster position="top-center" />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/quiz/:subject" element={<Quiz />} />
           <Route path="/result/:subject/:score" element={<Result />} />
           <Route path="/coming-soon" element={<ComingSoon />} />

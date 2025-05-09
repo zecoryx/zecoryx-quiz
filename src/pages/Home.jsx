@@ -3,54 +3,74 @@
 import { Link } from "react-router-dom";
 import { FiCode, FiFileText, FiCoffee } from "react-icons/fi";
 import { FaReact, FaNodeJs, FaPython } from "react-icons/fa";
-import { SiExpress, SiTypescript } from "react-icons/si";
+import { SiCplusplus, SiExpress, SiTypescript } from "react-icons/si";
 import { motion } from "framer-motion";
 import { GrSwift } from "react-icons/gr";
+import { BiLogoPhp } from "react-icons/bi";
+import { IoPeopleSharp } from "react-icons/io5";
 
 function Home() {
   const subjects = [
-    { id: "html", name: "HTML", icon: <FiCode className="" />, color: "from-orange-400 to-orange-600" },
-    { id: "css", name: "CSS", icon: <FiFileText className="" />, color: "from-green-400 to-green-600" },
+    { id: "html", name: "HTML", icon: <FiCode className="" size={25}  />, color: "from-orange-400 to-orange-600" },
+    { id: "css", name: "CSS", icon: <FiFileText className="" size={25}  />, color: "from-green-400 to-green-600" },
     {
       id: "javascript",
       name: "Javascript",
-      icon: <FiCoffee className="" />,
+      icon: <FiCoffee className="" size={25}  />,
       color: "from-yellow-400 to-yellow-600",
     },
     {
       id: "react",
       name: "React",
-      icon: <FaReact className="" />,
+      icon: <FaReact className="" size={25}  />,
       color: "from-blue-400 to-blue-600",
     },
     {
       id: "typescript",
       name: "TypeScript",
-      icon: <SiTypescript className="" />,
+      icon: <SiTypescript className="" size={25}  />,
       color: "from-blue-600 to-blue-800",
     },
     {
       id: "nodejs",
       name: "Node.js",
-      icon: <FaNodeJs className="" />,
+      icon: <FaNodeJs className="" size={25}  />,
       color: "from-green-600 to-green-800",
     },
     {
       id: "expressjs",
       name: "Express js",
-      icon: <SiExpress className="" />,
+      icon: <SiExpress className="" size={25} />,
       color: "from-green-800 to-green-600",
     },
     {
-      id: "pyhton",
+      id: "python",
       name: "Python",
-      icon: <FaPython className="" />,
+      icon: <FaPython className="" size={25}  />,
       color: "from-white to-blue-800",
     },
     {
       id: "swift",
       name: "Swift",
-      icon: <GrSwift className="" />,
+      icon: <GrSwift className="" size={25}  />,
+      color: "from-orange-600 to-orange-800",
+    },
+    {
+      id: "Cplus",
+      name: "C++",
+      icon: <SiCplusplus className="" size={25} />,
+      color: "from-blue-600 to-blue-800",
+    },
+    {
+      id: "php",
+      name: "PHP",
+      icon: <BiLogoPhp className="" size={40}/>,
+      color: "from-blue-300 to-blue-500",
+    },
+    {
+      id: "intervQuiz",
+      name: "Interview quiz",
+      icon: <IoPeopleSharp className="" />,
       color: "from-orange-600 to-orange-800",
     },
   ];
@@ -67,7 +87,7 @@ function Home() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-4xl">
         {subjects.map((subject, index) => (
           <motion.div key={subject.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }}>
-            <Link to={`/quiz/${subject.id}`} className="flex items-center gap-4 p-5 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 option-card">
+            <Link to={`/quiz/${subject.id}`} className="flex items-center gap-4 p-5 text-white bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 option-card">
               <div className={`w-12 h-12 flex items-center justify-center rounded-lg bg-gradient-to-br ${subject.color} text-white`}>{subject.icon}</div>
               <span className="font-medium text-lg">{subject.name}</span>
             </Link>
