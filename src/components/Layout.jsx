@@ -30,7 +30,7 @@ function Layout() {
 
       <div className="flex items-end justify-end m-3">
         {show && (
-          <Link to="/Contact" style={{ cursor: "pointer" }} target="blank">
+          <Link to="/Contact" style={{ cursor: "pointer" }}>
             <div className="md:absolute top-6 right-6 flex items-center gap-2">
               <button className="relative inline-flex h-10 w-40 items-center rounded-full text-white bg-purple-600 pl-3 cursor-pointer">createdBy: zecoryx</button>
             </div>
